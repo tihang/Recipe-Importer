@@ -33,7 +33,7 @@ app.get("/recipe", (req, res) => {
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Go to GET /recipe and enter a valid URL"
+    message: "Go to GET /recipe?url= and enter a valid URL"
   });
 });
 
