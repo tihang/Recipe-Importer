@@ -1,11 +1,14 @@
 ## Table of Contents (Optional)
 
 - [Directory](#Directory)
-- [Installation](#Installation)
 - [Clone](#Clone)
 - [Setup](#Setup)
-- [3rd-party-libraries](#3rd party libraries)
+- [Libraries](#Libraries)
 - [Notes](#Notes)
+
+### Website
+
+Live at **https://recipe-importer.herokuapp.com/** 🔨
 
 ### Directory
 
@@ -19,13 +22,9 @@
     ├── .gitignore                          # Igore files to be added to git
     ├── Procfile                            # heroku deploy script
     ├── README.md
-    ├── index.js                            # App entrypoint
+    ├── index.js                            # App entrypoint and also contains recipe route
     ├── package.json
     └── yarn.lock
-
-### Installation
-
-- All the `code` required to get started
 
 ### Clone
 
@@ -39,25 +38,29 @@ or
 $ yarn install
 ```
 
+### Start
+
 ```shell
 $ npm start
 or
 $ yarn start
 ```
 
-### 3rd party libraries
+### Libraries
 
-- "cheerio": "^1.0.0-rc.3",
-- "dotenv": "^8.2.0",
-- "express": "^4.17.1",
-- "request": "^2.88.2",
-- "request-promise": "^4.2.5"
+> cheerio
+> request
+> request-promise
+> express
+> dotenv
 
 ### Notes
 
 - Works with following URL's
 
-- https://cooking.nytimes.com/recipes/1017518-panzanella-with-mozzarella-and-herbs (Should be possible despite pay-wall)
-- https://www.eatthelove.com/cookies-and-cream-cookies/
-- https://www.maangchi.com/recipe/bugeopo-gochujang-muchim
-- http://www.laurainthekitchen.com/recipes/croque-madam/
+```shell
+    https://cooking.nytimes.com/recipes/1017518-panzanella-with-mozzarella-and-herbs (Should be possible despite pay-wall)
+    https://www.eatthelove.com/cookies-and-cream-cookies/
+    https://www.maangchi.com/recipe/bugeopo-gochujang-muchim
+    https://www.laurainthekitchen.com/recipes/croque-madam/
+```
