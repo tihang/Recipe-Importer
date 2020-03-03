@@ -44,7 +44,7 @@ function recipe_url_to_object(url, $) {
       return Object.assign({}, { url, name, ingredients, steps });
 
     default:
-      res.json({ message: "Oops! provide a valid URL" });
+      return { message: "Oops! provide a valid URL" };
   }
 }
 

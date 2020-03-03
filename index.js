@@ -1,7 +1,7 @@
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const express = require("express");
-const request = require("request");
+var request_promise = require("request-promise");
 const cheerio = require("cheerio");
 const app = express();
 
@@ -17,18 +17,17 @@ app.get("/recipe", (req, res) => {
   // Sanitize he URL- Helper method is stripping the trailing slash
   const url = strip_trailing_slash(req.query.url);
 
-  request(url, (error, response, body) => {
-    if (error) {
+  request_promise(url)
+    .then(function(htmlString) {
+      const $ = cheerio.load(htmlString);
+      // Process html...
+      recipe_object = recipe_url_to_object(url, $);
+      res.json(recipe_object);
+    })
+    .catch(function(err) {
+      // Crawling failed...
       res.json({ message: "Oops! provide a valid URL" });
-    }
-    // Proceed if no error
-    // Load the page into cheerio instance
-    const $ = cheerio.load(body);
-
-    // Getting a recipe object after providing URL and cheerio instace to the method /recipes/index.js
-    recipe_object = recipe_url_to_object(url, $);
-    res.json(recipe_object);
-  });
+    });
 });
 
 app.get("/", (req, res) => {
