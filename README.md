@@ -20,25 +20,24 @@ Live at **https://recipe-importer.herokuapp.com/** 🔨
 
 ### Architecture
 
-This is an implementation of a webcrawler which works on 4 given websites below. All the recipe crawlers logic are seperated into different files inside ├── recipes directory so that it is easy to make edits if something breaks, all these files are imported in the recipes/index.js, this file also contains a function which holds logic and return the required recipe object to our route. Later on if we have many routes to handle, /routes directory can be made with different routes, but for this, as we only had one endpoint to handle I decided it do it in index.js
+This is an implementation of a webcrawler which works on 4 given websites below. All the recipe crawlers logic are seperated into different files inside /recipes directory so that it is easy to make edits if something breaks, all these files are imported in the recipes/index.js, this file also contains a function which holds logic and return the required recipe object to our route. Later on if we have many routes to handle, /routes directory can be made with different routes, but for this, as we only had one endpoint to handle I decided it do it in index.js
 
 **Note on the deliverable:**
-
-Ingredients was request to be an array of objects with diffrent fields like such -
+Ingredients was request to be an array of objects with diffrent fields like such =>
 
 ```shell
     "ingredients": [{"name": "Corn","quantity": "2}]
 ```
 
-I implemented it as array of stings with all fields togther in a string like such -
+I implemented it as array of stings with all fields togther in a string like such =>
 
 ```shell
-"ingredients": ["3½ ouncespollock", "½ cup rice"]
+    "ingredients": ["3 ounces pollock", "1 cup rice"]
 ```
 
 This could be done an array of objects with more code instead of string if absolutely necessary.
 
-- Works only with following URL's
+**Works only with following URL's**
 
 ```shell
     https://cooking.nytimes.com/recipes/1017518-panzanella-with-mozzarella-and-herbs
