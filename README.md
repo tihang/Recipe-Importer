@@ -59,7 +59,7 @@ $ yarn start
 - Works with following URL's
 
 ```shell
-    https://cooking.nytimes.com/recipes/1017518-panzanella-with-mozzarella-and-herbs (Should be possible despite pay-wall)
+    https://cooking.nytimes.com/recipes/1017518-panzanella-with-mozzarella-and-herbs
     https://www.eatthelove.com/cookies-and-cream-cookies/
     https://www.maangchi.com/recipe/bugeopo-gochujang-muchim
     https://www.laurainthekitchen.com/recipes/croque-madam/
