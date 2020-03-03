@@ -16,7 +16,7 @@ function recipe_url_to_object(url, $) {
 
   // Switch accoding to the URL provided
   switch (url) {
-    case corque_madam.url1:
+    case corque_madam.url:
       name = corque_madam.getName($);
       ingredients = corque_madam.getIngredients($);
       steps = corque_madam.getSteps($);
