@@ -49,13 +49,22 @@ This could be done an array of objects with more code instead of string if absol
 
 ### Routes
 
-```shell
 Method: GET
 Path: /recipe
 Parameters:
-    url: string
+url: string
 
-Fully formed url would look similar to https://recipe-importer.herokuapp.com/recipe?url=https://www.eatthelove.com/cookies-and-cream-cookies
+Fully formed url would look similar to =>
+https://recipe-importer.herokuapp.com/recipe?url=https://www.eatthelove.com/cookies-and-cream-cookies
+
+```shell
+Response:
+    {
+        "url": String,
+        "name": String,
+        "ingredients": [String],
+        "steps": [String]
+    }
 ```
 
 ### Clone
