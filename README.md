@@ -53,7 +53,7 @@ This could be done an array of objects with more code instead of string if absol
 Method: GET
 Path: /recipe
 Parameters:
-url: string
+    url: string
 
 Fully formed url would look similar to =>
 https://recipe-importer.herokuapp.com/recipe?url=https://www.eatthelove.com/cookies-and-cream-cookies
@@ -69,11 +69,13 @@ Response:
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/tihang/Recipe-Importer.git`
+- Clone this repo to your local machine using `https://github.com/tihang/recipe-importer.git`
 
 ### Setup
 
 ```shell
+To install all required modules:
+
 $ npm install
 or
 $ yarn install
@@ -82,6 +84,8 @@ $ yarn install
 ### Start
 
 ```shell
+To start server:
+
 $ npm start
 or
 $ yarn start
