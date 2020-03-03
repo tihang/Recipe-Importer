@@ -6,7 +6,7 @@ const cheerio = require("cheerio");
 const app = express();
 
 // Import helpers
-const strip_trailing_slash = require("./helpers/strip_trailing_slash");
+const sanitize_url = require("./helpers/sanitize_url.js");
 
 // Import recipe helper
 const recipe_url_to_object = require("./recipes");
@@ -14,8 +14,8 @@ const recipe_url_to_object = require("./recipes");
 // GET @recipe
 // Route - Recieves link to site and sends scraped instance
 app.get("/recipe", (req, res) => {
-  // Sanitize he URL- Helper method is stripping the trailing slash
-  const url = strip_trailing_slash(req.query.url);
+  // Sanitize he URL- Helper method is stripping the trailing slash and changing http to https
+  const url = sanitize_url(req.query.url);
 
   request_promise(url)
     .then(function(htmlString) {
@@ -32,7 +32,13 @@ app.get("/recipe", (req, res) => {
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Go to GET /recipe?url= and enter a valid URL"
+    message: "Go to GET /recipe?url= and enter a valid URL",
+    quick_links: [
+      "https://recipe-importer.herokuapp.com/recipe?url=https://cooking.nytimes.com/recipes/1017518-panzanella-with-mozzarella-and-herbs",
+      "https://recipe-importer.herokuapp.com/recipe?url=https://www.eatthelove.com/cookies-and-cream-cookies",
+      "https://recipe-importer.herokuapp.com/recipe?url=https://www.maangchi.com/recipe/bugeopo-gochujang-muchim",
+      "https://recipe-importer.herokuapp.com/recipe?url=https://www.laurainthekitchen.com/recipes/croque-madam"
+    ]
   });
 });
 
