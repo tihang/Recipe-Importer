@@ -1,11 +1,3 @@
-## Table of Contents (Optional)
-
-- [Directory](#Directory)
-- [Clone](#Clone)
-- [Setup](#Setup)
-- [Libraries](#Libraries)
-- [Notes](#Notes)
-
 ### Website
 
 Live at **https://recipe-importer.herokuapp.com/** 🔨

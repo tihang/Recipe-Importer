@@ -16,7 +16,7 @@ function recipe_url_to_object(url, $) {
 
   // Switch accoding to the URL provided
   switch (url) {
-    case corque_madam.url:
+    case corque_madam.url1:
       name = corque_madam.getName($);
       ingredients = corque_madam.getIngredients($);
       steps = corque_madam.getSteps($);
@@ -32,10 +32,7 @@ function recipe_url_to_object(url, $) {
       name = cookies_and_cream.getName($);
       ingredients = cookies_and_cream.getIngredients($);
       steps = cookies_and_cream.getSteps($);
-      return Object.assign(
-        {},
-        { url: cookies_and_cream.url, name, ingredients, steps }
-      );
+      return Object.assign({}, { url, name, ingredients, steps });
 
     case panzella_with_mozzarella.url:
       name = panzella_with_mozzarella.getName($);
