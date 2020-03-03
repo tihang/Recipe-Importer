@@ -23,6 +23,7 @@ Live at **https://recipe-importer.herokuapp.com/** 🔨
 This is an implementation of a webcrawler which works on 4 given websites below. All the recipe crawlers logic are seperated into different files inside /recipes directory so that it is easy to make edits if something breaks, all these files are imported in the recipes/index.js, this file also contains a function which holds logic and return the required recipe object to our route. Later on if we have many routes to handle, /routes directory can be made with different routes, but for this, as we only had one endpoint to handle I decided it do it in index.js
 
 **Note on the deliverable:**
+
 Ingredients was request to be an array of objects with diffrent fields like such =>
 
 ```shell
@@ -44,6 +45,17 @@ This could be done an array of objects with more code instead of string if absol
     https://www.eatthelove.com/cookies-and-cream-cookies/
     https://www.maangchi.com/recipe/bugeopo-gochujang-muchim
     https://www.laurainthekitchen.com/recipes/croque-madam/
+```
+
+### Routes
+
+```shell
+Method: GET
+Path: /recipe
+Parameters:
+    url: string
+
+Fully formed url would look similar to https://recipe-importer.herokuapp.com/recipe?url=https://www.eatthelove.com/cookies-and-cream-cookies
 ```
 
 ### Clone
