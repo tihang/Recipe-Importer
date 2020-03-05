@@ -9,40 +9,41 @@ const panzella_with_mozzarella = require("./panzella_with_mozzarella");
 
 // This function recieves a URL and Cheerio instance and returns a valid usable recipe object
 function recipe_url_to_object(url, $) {
-  // Pre-declaring values that we want to extract from page
-  let name = "";
-  let ingredients;
-  let steps = [];
+  // Declare instance
+  let recipie_instance;
 
-  // Switch accoding to the URL provided
+  // Switch and assign instance accoding to the URL provided
   switch (url) {
     case corque_madam.url:
-      name = corque_madam.getName($);
-      ingredients = corque_madam.getIngredients($);
-      steps = corque_madam.getSteps($);
-      return Object.assign({}, { url, name, ingredients, steps });
+      recipie_instance = corque_madam;
+      break;
 
     case dired_shredded_pollock.url:
-      name = dired_shredded_pollock.getName($);
-      ingredients = dired_shredded_pollock.getIngredients($);
-      steps = dired_shredded_pollock.getSteps($);
-      return Object.assign({}, { url, name, ingredients, steps });
+      recipie_instance = dired_shredded_pollock;
+      break;
 
     case cookies_and_cream.url:
-      name = cookies_and_cream.getName($);
-      ingredients = cookies_and_cream.getIngredients($);
-      steps = cookies_and_cream.getSteps($);
-      return Object.assign({}, { url, name, ingredients, steps });
+      recipie_instance = cookies_and_cream;
+      break;
 
     case panzella_with_mozzarella.url:
-      name = panzella_with_mozzarella.getName($);
-      ingredients = panzella_with_mozzarella.getIngredients($);
-      steps = panzella_with_mozzarella.getSteps($);
-      return Object.assign({}, { url, name, ingredients, steps });
+      recipie_instance = panzella_with_mozzarella;
+      break;
 
     default:
-      return { message: "Oops! provide a valid URL" };
+      recipie_instance = null;
+      break;
   }
+
+  return Object.assign(
+    {},
+    {
+      url,
+      name: recipie_instance.getName($),
+      ingredients: recipie_instance.getIngredients($),
+      steps: recipie_instance.getSteps($)
+    }
+  );
 }
 
 module.exports = recipe_url_to_object;
